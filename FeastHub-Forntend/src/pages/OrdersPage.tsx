@@ -330,7 +330,6 @@ const OrdersPage: React.FC = () => {
           ...(Array.isArray(parentOrdersResponse.data) ? parentOrdersResponse.data : []),
           ...(Array.isArray(customOrdersResponse.data) ? customOrdersResponse.data : []),
         ].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
-
         setOrders(combinedOrders);
       } catch (err) {
         console.error('Failed to fetch orders:', err);
