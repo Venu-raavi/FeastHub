@@ -1,0 +1,7 @@
+/MID project venky.pdf
+/report project.pdf
+
+.env
+node_modules/
+.DS_Store
+dist/
