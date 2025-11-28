@@ -327,8 +327,8 @@ const OrdersPage: React.FC = () => {
         ]);
 
         const combinedOrders = [
-          ...parentOrdersResponse.data,
-          ...customOrdersResponse.data,
+          ...(Array.isArray(parentOrdersResponse.data) ? parentOrdersResponse.data : []),
+          ...(Array.isArray(customOrdersResponse.data) ? customOrdersResponse.data : []), 
         ].sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime());
 
         setOrders(combinedOrders);
